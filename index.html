@@ -328,23 +328,87 @@
       color: var(--text-secondary);
     }
 
-    /* ===== FOOTER ===== */
-    .footer {
+    /* ===== CLOSING ===== */
+    .closing {
+      position: relative;
       text-align: center;
-      padding: 32px 24px;
-      border-top: 1px solid var(--border);
-      font-size: 0.85rem;
+      padding: 40px 24px 64px;
+      margin-top: 140px;
+    }
+    .closing .mascot-half {
+      position: absolute;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 120px;
+    }
+    .closing .mascot-half img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid var(--border);
+      background: var(--surface);
+      object-fit: cover;
+    }
+    .closing h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      margin-top: 24px;
+    }
+    .closing p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      max-width: 560px;
+      margin: 0 auto 20px;
+      line-height: 1.75;
+    }
+    .closing .stack-icons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .closing .stack-icon {
+      display: inline-block;
+      background: var(--tag-bg);
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 500;
       color: var(--text-secondary);
     }
-    .footer-avatar {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      margin-bottom: 10px;
-      border: 2px solid var(--border);
+    .closing .footer-credit {
+      margin-top: 32px;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
     }
-    .footer a { color: var(--accent-dark); text-decoration: none; }
-    .footer a:hover { text-decoration: underline; }
+    .closing .footer-credit a { color: var(--accent-dark); text-decoration: none; }
+    .closing .footer-credit a:hover { text-decoration: underline; }
+
+    /* ===== BACK NAV ===== */
+    .back-nav {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-decoration: none;
+      box-shadow: var(--shadow-md);
+      transition: background 0.15s;
+      z-index: 100;
+    }
+    .back-nav:hover { background: var(--tag-bg); }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 640px) {
@@ -634,12 +698,31 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
-  <div class="footer">
-    <img class="footer-avatar" src="https://avatars.githubusercontent.com/u/256731825?v=4" alt="tanθ avatar">
-    <p>Design Inspector for Claude — built by <a href="https://tanplanet.info" target="_blank">tanθ</a></p>
-    <p style="margin-top: 4px; font-size: 0.8rem;">UX Designer × AI Workflow</p>
+  <!-- CLOSING -->
+  <div class="closing">
+    <div class="mascot-half">
+      <img src="https://avatars.githubusercontent.com/u/256731825?v=4" alt="tanθ avatar">
+    </div>
+    <h2>Inspect → Copy → Paste to Claude</h2>
+    <p>Design Inspector for Claude เกิดจากการสังเกต pain point ของตัวเอง แล้วลงมือแก้ปัญหาด้วย Design Thinking — ตั้งแต่ empathize, prototype, จนถึง iterate จากการใช้งานจริง</p>
+    <div class="stack-icons">
+      <span class="stack-icon">Chrome Extension</span>
+      <span class="stack-icon">Manifest V3</span>
+      <span class="stack-icon">Shadow DOM</span>
+      <span class="stack-icon">Offscreen API</span>
+      <span class="stack-icon">Design Thinking</span>
+      <span class="stack-icon">AI Workflow</span>
+    </div>
+    <div class="footer-credit">
+      <p>built by <a href="https://tanplanet.info" target="_blank">tanθ</a> — UX Designer × AI Workflow</p>
+    </div>
   </div>
+
+  <!-- BACK NAV -->
+  <a class="back-nav" href="https://projects.tanplanet.info/" rel="noopener">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10 3L5 8l5 5"/></svg>
+    Projects
+  </a>
 
 </body>
 </html>
